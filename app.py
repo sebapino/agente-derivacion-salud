@@ -5,78 +5,89 @@ import json
 import os
 
 # 1. Configuración de la Interfaz
-st.set_page_config(page_title="Asistente de Derivación Salud", page_icon="🏥", layout="centered")
+st.set_page_config(page_title="Asistente de Derivación SSVSA", page_icon="🏥", layout="centered")
 
-st.title("🏥 Asistente Inteligente de Derivación")
+# --- ESTILOS PERSONALIZADOS ---
 st.markdown("""
-Esta herramienta ayuda a identificar el **Establecimiento Destino** según el Mapa de Derivación oficial. 
-La decisión clínica final es siempre del profesional tratante.
-""")
+    <style>
+    .stButton>button { width: 100%; border-radius: 20px; height: 3em; background-color: #f0f2f6; }
+    .stExpander { border: 1px solid #e6e9ef; border-radius: 10px; margin-bottom: 10px; }
+    </style>
+    """, unsafe_content_html=True)
+
+# --- SECCIÓN DE LOGO Y TÍTULO ---
+if os.path.exists('logo.png'):
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image('logo.png', use_container_width=True)
+else:
+    st.title("🏥 Asistente Inteligente de Derivación")
+
+st.markdown("<h3 style='text-align: center;'>Red de Derivación SSVSA</h3>", unsafe_content_html=True)
+st.markdown("---")
 
 # 2. Conexión con la IA
 try:
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 except Exception:
-    st.error("⚠️ Error de configuración: No se encontró la API Key en Streamlit Secrets.")
+    st.error("⚠️ Error: Configura la 'GROQ_API_KEY' en los Secrets de Streamlit.")
 
 # 3. Función para cargar y normalizar el CSV
 @st.cache_data
 def cargar_datos():
     archivo = 'derivaciones.csv'
-    
     if not os.path.exists(archivo):
-        archivos_en_carpeta = os.listdir('.')
-        st.error(f"❌ No se encontró '{archivo}'. En el repositorio veo: {archivos_en_carpeta}")
         return None
-
     try:
         df = pd.read_csv(archivo, sep=None, engine='python', encoding='utf-8')
-        
-        # Normalización de nombres de columnas (Mayúsculas y sin tildes)
-        df.columns = (df.columns.str.strip()
-                      .str.upper()
-                      .str.replace('Ó', 'O')
-                      .str.replace('Á', 'A')
-                      .str.replace('É', 'E')
-                      .str.replace('Í', 'I')
-                      .str.replace('Ú', 'U'))
-        
-        # Limpieza de datos en las celdas
+        df.columns = (df.columns.str.strip().str.upper()
+                      .str.replace('Ó', 'O').str.replace('Á', 'A')
+                      .str.replace('É', 'E').str.replace('Í', 'I')
+                      .str.replace('Ú', 'U').str.replace(' ', '_'))
         df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
         return df
     except Exception as e:
         st.error(f"❌ Error al leer el CSV: {e}")
         return None
 
-# Intentar cargar la base de datos
 df_mapa = cargar_datos()
 
 if df_mapa is not None:
+    # --- BOTÓN NUEVA CONSULTA (Limpia el estado) ---
+    if st.button("🔄 Nueva Consulta / Limpiar"):
+        st.rerun()
+
+    # --- FILTRO POR TIPO ---
+    if 'TIPO_ESPECIALIDAD' in df_mapa.columns:
+        tipos_disponibles = sorted(df_mapa['TIPO_ESPECIALIDAD'].unique().tolist())
+        tipo_seleccionado = st.selectbox("1. Selecciona el Tipo de Especialidad:", ["TODOS"] + tipos_disponibles)
+    else:
+        tipo_seleccionado = "TODOS"
+
     # 4. Entrada del Operador
-    user_input = st.text_input("Haz tu consulta (ej: Paciente de Maipú para Oftalmología):", "")
+    user_input = st.text_input("2. Describe la consulta (ej: Paciente de Casablanca para Endodoncia):", key="input_query")
 
     if user_input:
+        df_filtrado = df_mapa.copy()
+        if tipo_seleccionado != "TODOS":
+            df_filtrado = df_mapa[df_mapa['TIPO_ESPECIALIDAD'] == tipo_seleccionado]
+
         with st.spinner("Analizando mapa de red..."):
             try:
-                # 5. El Cerebro (IA) extrae los filtros
+                # 5. IA Extrae Filtros
+                comunas_validas = df_filtrado['COMUNA_ORIGEN'].unique().tolist()
+                especialidades_validas = df_filtrado['ESPECIALIDAD_DESTINO'].unique().tolist()
+
                 prompt_sistema = f"""
-                Eres un extractor de datos técnicos de salud. 
-                Tu objetivo es extraer: COMUNA_ORIGEN y ESPECIALIDAD_DESTINO.
-                
-                Opciones válidas de Comuna: {df_mapa['COMUNA_ORIGEN'].unique().tolist()}
-                Opciones válidas de Especialidad: {df_mapa['ESPECIALIDAD_DESTINO'].unique().tolist()}
-                
-                Responde ÚNICAMENTE en formato JSON:
-                {{"comuna": "VALOR", "especialidad": "VALOR"}}
-                Si el valor no está en las opciones, pon "NULL".
+                Eres un experto en derivaciones del SSVSA. Extrae: COMUNA_ORIGEN y ESPECIALIDAD_DESTINO.
+                Opciones Comuna: {comunas_validas}
+                Opciones Especialidad: {especialidades_validas}
+                Responde ÚNICAMENTE en JSON: {{"comuna": "VALOR", "especialidad": "VALOR"}}
                 """
                 
                 completion = client.chat.completions.create(
                     model="llama-3.3-70b-versatile",
-                    messages=[
-                        {"role": "system", "content": prompt_sistema},
-                        {"role": "user", "content": user_input}
-                    ],
+                    messages=[{"role": "system", "content": prompt_sistema}, {"role": "user", "content": user_input}],
                     response_format={"type": "json_object"}
                 )
                 
@@ -84,39 +95,37 @@ if df_mapa is not None:
                 comuna = filtros.get("comuna")
                 especialidad = filtros.get("especialidad")
 
-                # 6. Lógica de Búsqueda con Agrupación de CIE-10
+                # 6. Lógica de Búsqueda y Agrupación
                 if comuna != "NULL" and especialidad != "NULL":
-                    resultado = df_mapa[
-                        (df_mapa['COMUNA_ORIGEN'] == comuna) & 
-                        (df_mapa['ESPECIALIDAD_DESTINO'] == especialidad)
+                    resultado = df_filtrado[
+                        (df_filtrado['COMUNA_ORIGEN'] == comuna) & 
+                        (df_filtrado['ESPECIALIDAD_DESTINO'] == especialidad)
                     ]
 
                     if not resultado.empty:
-                        # --- AGRUPACIÓN DE FILAS REPETIDAS ---
-                        # Agrupamos por destino y rango etario para consolidar CIE-10 y Observaciones
-                        agrupado = resultado.groupby(['ESTABLECIMIENTO_DESTINO', 'RANGO_EDAD']).agg({
+                        cols_agrupar = ['ESTABLECIMIENTO_DESTINO', 'RANGO_EDAD']
+                        if 'TIPO_ESPECIALIDAD' in df_mapa.columns: cols_agrupar.append('TIPO_ESPECIALIDAD')
+
+                        agrupado = resultado.groupby(cols_agrupar).agg({
                             'CIE-10': lambda x: ', '.join(sorted(set(x))),
                             'OBSERVACION': lambda x: ' | '.join(sorted(set(x)))
                         }).reset_index()
 
-                        st.success(f"📍 Resultado para {especialidad} desde {comuna}:")
+                        st.success(f"📍 Resultados para {especialidad} en {comuna}:")
                         
                         for i, row in agrupado.iterrows():
-                            with st.container():
-                                st.info(f"### {row['ESTABLECIMIENTO_DESTINO']}")
-                                st.write(f"**Rango Etario:** {row['RANGO_EDAD']}")
-                                
-                                # Mostramos los códigos agrupados estéticamente
-                                st.markdown(f"**Códigos CIE-10 Cubiertos:** `{row['CIE-10']}`")
-                                
-                                # Mostramos las observaciones consolidadas
-                                st.warning(f"**Observación:** {row['OBSERVACION']}")
-                                st.divider()
+                            with st.expander(f"🏥 {row['ESTABLECIMIENTO_DESTINO']}", expanded=True):
+                                c1, c2 = st.columns(2)
+                                with c1: st.write(f"**Edad:** {row['RANGO_EDAD']}")
+                                with c2: 
+                                    if 'TIPO_ESPECIALIDAD' in row: st.write(f"**Tipo:** {row['TIPO_ESPECIALIDAD']}")
+                                st.markdown(f"**CIE-10:** `{row['CIE-10']}`")
+                                st.info(f"**Observación:** {row['OBSERVACION']}")
                     else:
-                        st.warning(f"No existe una ruta directa para {especialidad} en {comuna}.")
+                        st.warning(f"No hay ruta para {especialidad} en {comuna} categoría {tipo_seleccionado}.")
                 else:
-                    st.info("No logré identificar la comuna o especialidad. Intenta mencionar ambas claramente.")
+                    st.info("No identifiqué la comuna o especialidad. Intenta ser más específico.")
             except Exception as e:
-                st.error(f"Hubo un error al procesar la consulta con la IA: {e}")
+                st.error(f"Error: {e}")
 else:
-    st.info("Esperando que el archivo de datos esté disponible...")
+    st.warning("⚠️ Sube el archivo 'derivaciones.csv' a tu repositorio.")
