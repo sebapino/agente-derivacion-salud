@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from groq import Groq
 import json
+import os
 
 # 1. Configuración de la Interfaz
 st.set_page_config(page_title="Asistente de Derivación Salud", page_icon="🏥", layout="centered")
@@ -12,75 +13,103 @@ Esta herramienta ayuda a identificar el **Establecimiento Destino** según el Ma
 La decisión clínica final es siempre del profesional tratante.
 """)
 
-# 2. Conexión con la IA (Debes poner tu API Key de Groq aquí o en Secrets)
-# Para pruebas locales puedes usar: client = Groq(api_key="TU_LLAVE_AQUI")
+# 2. Conexión con la IA
 try:
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-except:
-    st.error("Falta la configuración de la API Key. Por favor, configúrala en Streamlit Secrets.")
+except Exception:
+    st.error("⚠️ Error de configuración: No se encontró la API Key en Streamlit Secrets.")
 
 # 3. Función para cargar y normalizar el CSV
 @st.cache_data
 def cargar_datos():
-    df = pd.read_csv('derivaciones.csv', sep=None, engine='python')
-    # Normalización: Todo a mayúsculas y sin espacios extra para evitar errores de "match"
-    df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
-    return df
+    archivo = 'derivaciones.csv'
+    
+    # Verificación de existencia de archivo
+    if not os.path.exists(archivo):
+        archivos_en_carpeta = os.listdir('.')
+        st.error(f"❌ No se encontró '{archivo}'. En el repositorio veo: {archivos_en_carpeta}")
+        return None
 
-try:
-    df_mapa = cargar_datos()
+    try:
+        # Cargamos detectando automáticamente el separador (coma o punto y coma)
+        df = pd.read_csv(archivo, sep=None, engine='python', encoding='utf-8')
+        
+        # --- NORMALIZACIÓN CRÍTICA ---
+        # 1. Quitamos espacios y pasamos nombres de columnas a MAYÚSCULAS sin tildes para el código
+        df.columns = (df.columns.str.strip()
+                      .str.upper()
+                      .str.replace('Ó', 'O')
+                      .str.replace('Á', 'A')
+                      .str.replace('É', 'E')
+                      .str.replace('Í', 'I')
+                      .str.replace('Ú', 'U'))
+        
+        # 2. Limpiamos los datos de las celdas
+        df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
+        return df
+    except Exception as e:
+        st.error(f"❌ Error al leer el CSV: {e}")
+        return None
 
-    # 4. Entrada del Operador (Lenguaje Natural)
-    user_input = st.text_input("Ejemplo: 'Paciente de Maipú necesita derivación a Oftalmología'", "")
+# Intentar cargar la base de datos
+df_mapa = cargar_datos()
+
+# Si los datos cargaron, habilitamos la búsqueda
+if df_mapa is not None:
+    # 4. Entrada del Operador
+    user_input = st.text_input("Haz tu consulta (ej: Paciente de Maipú para Oftalmología):", "")
 
     if user_input:
         with st.spinner("Analizando mapa de red..."):
-            # 5. El Cerebro (IA) extrae los filtros
-            prompt_sistema = f"""
-            Eres un extractor de datos técnicos de salud. 
-            Tu objetivo es extraer: Comuna_Origen y Especialidad_Destino del texto.
-            
-            Opciones válidas de Comuna: {df_mapa['Comuna_Origen'].unique().tolist()}
-            Opciones válidas de Especialidad: {df_mapa['Especialidad_Destino'].unique().tolist()}
-            
-            Responde ÚNICAMENTE en formato JSON:
-            {{"comuna": "VALOR", "especialidad": "VALOR"}}
-            Si no encuentras el dato, pon "NULL".
-            """
-            
-            completion = client.chat.completions.create(
-                model="llama3-8b-8192",
-                messages=[
-                    {"role": "system", "content": prompt_sistema},
-                    {"role": "user", "content": user_input}
-                ],
-                response_format={"type": "json_object"}
-            )
-            
-            filtros = json.loads(completion.choices[0].message.content)
-            comuna = filtros.get("comuna")
-            especialidad = filtros.get("especialidad")
+            try:
+                # 5. El Cerebro (IA) extrae los filtros
+                prompt_sistema = f"""
+                Eres un extractor de datos técnicos de salud. 
+                Tu objetivo es extraer: COMUNA_ORIGEN y ESPECIALIDAD_DESTINO.
+                
+                Opciones válidas de Comuna: {df_mapa['COMUNA_ORIGEN'].unique().tolist()}
+                Opciones válidas de Especialidad: {df_mapa['ESPECIALIDAD_DESTINO'].unique().tolist()}
+                
+                Responde ÚNICAMENTE en formato JSON:
+                {{"comuna": "VALOR", "especialidad": "VALOR"}}
+                Si el valor no está en las opciones, pon "NULL".
+                """
+                
+                completion = client.chat.completions.create(
+                    model="llama3-8b-8192",
+                    messages=[
+                        {"role": "system", "content": prompt_sistema},
+                        {"role": "user", "content": user_input}
+                    ],
+                    response_format={"type": "json_object"}
+                )
+                
+                filtros = json.loads(completion.choices[0].message.content)
+                comuna = filtros.get("comuna")
+                especialidad = filtros.get("especialidad")
 
-            # 6. Lógica de Búsqueda Estricta
-            if comuna != "NULL" and especialidad != "NULL":
-                resultado = df_mapa[
-                    (df_mapa['Comuna_Origen'] == comuna) & 
-                    (df_mapa['Especialidad_Destino'] == especialidad)
-                ]
+                # 6. Lógica de Búsqueda
+                if comuna != "NULL" and especialidad != "NULL":
+                    resultado = df_mapa[
+                        (df_mapa['COMUNA_ORIGEN'] == comuna) & 
+                        (df_mapa['ESPECIALIDAD_DESTINO'] == especialidad)
+                    ]
 
-                if not resultado.empty:
-                    st.success(f"📍 **Destino Encontrado para {especialidad} desde {comuna}:**")
-                    for i, row in resultado.iterrows():
-                        with st.container():
-                            st.info(f"### {row['Establecimiento_Destino']}")
-                            st.write(f"**Rango Etario:** {row['Rango_Edad']}")
-                            st.write(f"**CIE-10 Asociado:** {row['CIE-10']}")
-                            st.write(f"**Observaciones:** {row['Observacion']}")
-                            st.divider()
+                    if not resultado.empty:
+                        st.success(f"📍 Resultado para {especialidad} desde {comuna}:")
+                        for i, row in resultado.iterrows():
+                            with st.container():
+                                # Usamos los nombres de columna normalizados (MAYÚSCULAS Y SIN TILDES)
+                                st.info(f"### {row['ESTABLECIMIENTO_DESTINO']}")
+                                st.write(f"**Rango Etario:** {row['RANGO_EDAD']}")
+                                st.write(f"**CIE-10:** {row['CIE-10']}")
+                                st.write(f"**Observación:** {row['OBSERVACION']}")
+                                st.divider()
+                    else:
+                        st.warning(f"No existe una ruta directa para {especialidad} en {comuna}.")
                 else:
-                    st.warning(f"No se encontró una ruta específica en el mapa para {especialidad} en {comuna}.")
-            else:
-                st.info("Por favor, indica claramente la comuna y la especialidad requerida.")
-
-except Exception as e:
-    st.warning("Asegúrate de haber subido el archivo 'derivaciones.csv' correctamente.")
+                    st.info("No logré identificar la comuna o especialidad. Intenta ser más específico.")
+            except Exception as e:
+                st.error(f"Hubo un error al procesar la consulta con la IA: {e}")
+else:
+    st.info("Esperando que el archivo de datos esté disponible...")
