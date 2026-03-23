@@ -23,7 +23,7 @@ if os.path.exists('logo.png'):
 else:
     st.title("🏥 Asistente Inteligente de Derivación")
 
-st.markdown("<h3 style='text-align: center;'>Red de Derivación SSVSA By Sebastián Pino Rivera</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Red de Derivación SSVSA</h3>", unsafe_allow_html=True)
 st.markdown("---")
 
 # 2. Conexión con la IA
