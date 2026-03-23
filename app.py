@@ -76,7 +76,7 @@ if df_mapa is not None:
                 """
                 
                 completion = client.chat.completions.create(
-                    model="llama3-70b-8192",
+                    model="llama-3.3-70b-versatile",
                     messages=[
                         {"role": "system", "content": prompt_sistema},
                         {"role": "user", "content": user_input}
