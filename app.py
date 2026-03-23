@@ -7,13 +7,13 @@ import os
 # 1. Configuración de la Interfaz
 st.set_page_config(page_title="Asistente de Derivación SSVSA", page_icon="🏥", layout="centered")
 
-# --- ESTILOS PERSONALIZADOS ---
+# --- ESTILOS PERSONALIZADOS (CORREGIDO) ---
 st.markdown("""
-    <style>
+<style>
     .stButton>button { width: 100%; border-radius: 20px; height: 3em; background-color: #f0f2f6; }
     .stExpander { border: 1px solid #e6e9ef; border-radius: 10px; margin-bottom: 10px; }
-    </style>
-    """, unsafe_content_html=True)
+</style>
+""", unsafe_allow_html=True)
 
 # --- SECCIÓN DE LOGO Y TÍTULO ---
 if os.path.exists('logo.png'):
@@ -23,7 +23,7 @@ if os.path.exists('logo.png'):
 else:
     st.title("🏥 Asistente Inteligente de Derivación")
 
-st.markdown("<h3 style='text-align: center;'>Red de Derivación SSVSA</h3>", unsafe_content_html=True)
+st.markdown("<h3 style='text-align: center;'>Red de Derivación SSVSA</h3>", unsafe_allow_html=True)
 st.markdown("---")
 
 # 2. Conexión con la IA
@@ -32,57 +32,50 @@ try:
 except Exception:
     st.error("⚠️ Error: Configura la 'GROQ_API_KEY' en los Secrets de Streamlit.")
 
-# 3. Función para cargar y normalizar el CSV (MEJORADA CON AUTO-DECODIFICACIÓN)
+# 3. Función para cargar y normalizar el CSV
 @st.cache_data
 def cargar_datos():
     archivo = 'derivaciones.csv'
     if not os.path.exists(archivo):
         return None
     
-    # Intentamos diferentes codificaciones para evitar el error de 'utf-8'
-    encodigs_to_try = ['utf-8', 'latin-1', 'iso-8859-1', 'cp1252']
+    encodings_to_try = ['utf-8', 'latin-1', 'iso-8859-1', 'cp1252']
     df = None
     
-    for encoding in encodigs_to_try:
+    for encoding in encodings_to_try:
         try:
             df = pd.read_csv(archivo, sep=None, engine='python', encoding=encoding)
-            break # Si funciona, salimos del bucle
-        except (UnicodeDecodeError, Exception):
+            break
+        except:
             continue
             
     if df is None:
-        st.error("❌ No se pudo leer el archivo CSV. Revisa el formato y la codificación.")
+        st.error("❌ No se pudo leer el archivo CSV.")
         return None
 
     try:
-        # Normalización de nombres de columnas
         df.columns = (df.columns.str.strip().str.upper()
                       .str.replace('Ó', 'O').str.replace('Á', 'A')
                       .str.replace('É', 'E').str.replace('Í', 'I')
                       .str.replace('Ú', 'U').str.replace(' ', '_'))
-        
-        # Limpieza de datos en las celdas
         df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
         return df
     except Exception as e:
-        st.error(f"❌ Error al procesar las columnas: {e}")
+        st.error(f"❌ Error al procesar columnas: {e}")
         return None
 
 df_mapa = cargar_datos()
 
 if df_mapa is not None:
-    # --- BOTÓN NUEVA CONSULTA (Limpia el estado) ---
     if st.button("🔄 Nueva Consulta / Limpiar"):
         st.rerun()
 
-    # --- FILTRO POR TIPO ---
     if 'TIPO_ESPECIALIDAD' in df_mapa.columns:
         tipos_disponibles = sorted(df_mapa['TIPO_ESPECIALIDAD'].unique().tolist())
         tipo_seleccionado = st.selectbox("1. Selecciona el Tipo de Especialidad:", ["TODOS"] + tipos_disponibles)
     else:
         tipo_seleccionado = "TODOS"
 
-    # 4. Entrada del Operador
     user_input = st.text_input("2. Describe la consulta (ej: Paciente de Casablanca para Endodoncia):", key="input_query")
 
     if user_input:
@@ -92,7 +85,6 @@ if df_mapa is not None:
 
         with st.spinner("Analizando mapa de red..."):
             try:
-                # 5. IA Extrae Filtros
                 comunas_validas = df_filtrado['COMUNA_ORIGEN'].unique().tolist()
                 especialidades_validas = df_filtrado['ESPECIALIDAD_DESTINO'].unique().tolist()
 
@@ -113,7 +105,6 @@ if df_mapa is not None:
                 comuna = filtros.get("comuna")
                 especialidad = filtros.get("especialidad")
 
-                # 6. Lógica de Búsqueda y Agrupación
                 if comuna != "NULL" and especialidad != "NULL":
                     resultado = df_filtrado[
                         (df_filtrado['COMUNA_ORIGEN'] == comuna) & 
