@@ -7,11 +7,12 @@ import os
 # 1. Configuración de la Interfaz
 st.set_page_config(page_title="Asistente de Derivación SSVSA", page_icon="🏥", layout="centered")
 
-# --- ESTILOS PERSONALIZADOS (CORREGIDO) ---
+# --- ESTILOS PERSONALIZADOS ---
 st.markdown("""
 <style>
     .stButton>button { width: 100%; border-radius: 20px; height: 3em; background-color: #f0f2f6; }
     .stExpander { border: 1px solid #e6e9ef; border-radius: 10px; margin-bottom: 10px; }
+    .author-text { text-align: center; color: #666666; font-size: 0.9em; margin-top: -10px; margin-bottom: 20px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -23,7 +24,8 @@ if os.path.exists('logo.png'):
 else:
     st.title("🏥 Asistente Inteligente de Derivación")
 
-st.markdown("<h3 style='text-align: center;'>Red de Derivación SSVSA</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; margin-bottom: 0;'>Red de Derivación SSVSA</h3>", unsafe_allow_html=True)
+st.markdown("<p class='author-text'>Autoría: Sebastián Pino Rivera</p>", unsafe_allow_html=True)
 st.markdown("---")
 
 # 2. Conexión con la IA
