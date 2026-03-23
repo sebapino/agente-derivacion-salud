@@ -24,18 +24,15 @@ except Exception:
 def cargar_datos():
     archivo = 'derivaciones.csv'
     
-    # Verificación de existencia de archivo
     if not os.path.exists(archivo):
         archivos_en_carpeta = os.listdir('.')
         st.error(f"❌ No se encontró '{archivo}'. En el repositorio veo: {archivos_en_carpeta}")
         return None
 
     try:
-        # Cargamos detectando automáticamente el separador (coma o punto y coma)
         df = pd.read_csv(archivo, sep=None, engine='python', encoding='utf-8')
         
-        # --- NORMALIZACIÓN CRÍTICA ---
-        # 1. Quitamos espacios y pasamos nombres de columnas a MAYÚSCULAS sin tildes para el código
+        # Normalización de nombres de columnas (Mayúsculas y sin tildes)
         df.columns = (df.columns.str.strip()
                       .str.upper()
                       .str.replace('Ó', 'O')
@@ -44,7 +41,7 @@ def cargar_datos():
                       .str.replace('Í', 'I')
                       .str.replace('Ú', 'U'))
         
-        # 2. Limpiamos los datos de las celdas
+        # Limpieza de datos en las celdas
         df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
         return df
     except Exception as e:
@@ -54,7 +51,6 @@ def cargar_datos():
 # Intentar cargar la base de datos
 df_mapa = cargar_datos()
 
-# Si los datos cargaron, habilitamos la búsqueda
 if df_mapa is not None:
     # 4. Entrada del Operador
     user_input = st.text_input("Haz tu consulta (ej: Paciente de Maipú para Oftalmología):", "")
@@ -88,7 +84,7 @@ if df_mapa is not None:
                 comuna = filtros.get("comuna")
                 especialidad = filtros.get("especialidad")
 
-                # 6. Lógica de Búsqueda
+                # 6. Lógica de Búsqueda con Agrupación de CIE-10
                 if comuna != "NULL" and especialidad != "NULL":
                     resultado = df_mapa[
                         (df_mapa['COMUNA_ORIGEN'] == comuna) & 
@@ -96,19 +92,30 @@ if df_mapa is not None:
                     ]
 
                     if not resultado.empty:
+                        # --- AGRUPACIÓN DE FILAS REPETIDAS ---
+                        # Agrupamos por destino y rango etario para consolidar CIE-10 y Observaciones
+                        agrupado = resultado.groupby(['ESTABLECIMIENTO_DESTINO', 'RANGO_EDAD']).agg({
+                            'CIE-10': lambda x: ', '.join(sorted(set(x))),
+                            'OBSERVACION': lambda x: ' | '.join(sorted(set(x)))
+                        }).reset_index()
+
                         st.success(f"📍 Resultado para {especialidad} desde {comuna}:")
-                        for i, row in resultado.iterrows():
+                        
+                        for i, row in agrupado.iterrows():
                             with st.container():
-                                # Usamos los nombres de columna normalizados (MAYÚSCULAS Y SIN TILDES)
                                 st.info(f"### {row['ESTABLECIMIENTO_DESTINO']}")
                                 st.write(f"**Rango Etario:** {row['RANGO_EDAD']}")
-                                st.write(f"**CIE-10:** {row['CIE-10']}")
-                                st.write(f"**Observación:** {row['OBSERVACION']}")
+                                
+                                # Mostramos los códigos agrupados estéticamente
+                                st.markdown(f"**Códigos CIE-10 Cubiertos:** `{row['CIE-10']}`")
+                                
+                                # Mostramos las observaciones consolidadas
+                                st.warning(f"**Observación:** {row['OBSERVACION']}")
                                 st.divider()
                     else:
                         st.warning(f"No existe una ruta directa para {especialidad} en {comuna}.")
                 else:
-                    st.info("No logré identificar la comuna o especialidad. Intenta ser más específico.")
+                    st.info("No logré identificar la comuna o especialidad. Intenta mencionar ambas claramente.")
             except Exception as e:
                 st.error(f"Hubo un error al procesar la consulta con la IA: {e}")
 else:
