@@ -22,7 +22,7 @@ except:
 # 3. Función para cargar y normalizar el CSV
 @st.cache_data
 def cargar_datos():
-    df = pd.read_csv('derivaciones')
+    df = pd.read_csv('derivaciones.csv', sep=None, engine='python')
     # Normalización: Todo a mayúsculas y sin espacios extra para evitar errores de "match"
     df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
     return df
