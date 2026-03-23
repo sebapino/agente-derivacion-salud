@@ -1,171 +1,171 @@
-Comuna_Origen;Especialidad_Destino;Rango_Edad;Establecimiento_Destino;CIE-10;Observación
-Valparaíso.;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Carlos Van Buren;Todos.;
-Valparaíso.;Endodoncia;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos. Excepto: K04.9.;
-Valparaíso.;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Valparaíso.;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Valparaíso.;Periodoncia;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos. Excepto: K05.5 y Z75;
-Valparaíso.;Rehabilitación Oral Fija;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;Derivar con Rx retroalverolar
-Valparaíso.;Rehabilitación Oral Removible;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;
-Valparaíso.;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;Posterior a teleinterconsulta Hospital Digital.
-Juan Fernández;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Carlos Van Buren;Todos.;
-Juan Fernández;Endodoncia;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos. Excepto: K04.9.;
-Juan Fernández;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Juan Fernández;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Juan Fernández;Periodoncia;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos. Excepto: K05.5 y Z75;
-Juan Fernández;Rehabilitación Oral Fija;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;Derivar con Rx retroalverolar
-Juan Fernández;Rehabilitación Oral Removible;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;
-Juan Fernández;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;Posterior a teleinterconsulta Hospital Digital.
-Casablanca;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Carlos Van Buren;Todos.;
-Casablanca;Endodoncia;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos. Excepto: K04.9.;
-Casablanca;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Casablanca;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Casablanca;Periodoncia;Toda edad;Hospital San José Casablanca;Todos. Excepto: K05.5 y Z75;
-Casablanca;Rehabilitación Oral Fija;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;Derivar con Rx retroalverolar
-Casablanca;Rehabilitación Oral Removible;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;
-Casablanca;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Centro de Referencia de Salud Odontológica (C.R.S.O.);Todos.;Posterior a teleinterconsulta Hospital Digital.
-Valparaíso.;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Valparaíso.;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Valparaíso.;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Casablanca;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Casablanca;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Casablanca;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Juan Fernández;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Juan Fernández;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Juan Fernández;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Algarrobo;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-Algarrobo;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-Algarrobo;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Algarrobo;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Algarrobo;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-Algarrobo;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;Derivar con Rx retroalverolar
-Algarrobo;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-Algarrobo;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;Posterior a teleinterconsulta Hospital Digital.
-Algarrobo;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Algarrobo;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Algarrobo;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Cartagena;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-Cartagena;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-Cartagena;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Cartagena;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Cartagena;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-Cartagena;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;Derivar con Rx retroalverolar
-Cartagena;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-Cartagena;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;Posterior a teleinterconsulta Hospital Digital.
-Cartagena;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Cartagena;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Cartagena;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-El Quisco;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-El Quisco;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-El Quisco;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-El Quisco;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-El Quisco;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-El Quisco;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;Derivar con Rx retroalverolar
-El Quisco;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-El Quisco;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;Posterior a teleinterconsulta Hospital Digital.
-El Quisco;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-El Quisco;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-El Quisco;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-El Tabo;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-El Tabo;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-El Tabo;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-El Tabo;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-El Tabo;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-El Tabo;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;Derivar con Rx retroalverolar
-El Tabo;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-El Tabo;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;Posterior a teleinterconsulta Hospital Digital.
-El Tabo;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-El Tabo;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-El Tabo;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-San Antonio;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-San Antonio;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-San Antonio;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-San Antonio;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-San Antonio;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-San Antonio;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;Derivar con Rx retroalverolar
-San Antonio;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-San Antonio;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;Posterior a teleinterconsulta Hospital Digital.
-San Antonio;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-San Antonio;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-San Antonio;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Santo Domingo;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-Santo Domingo;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-Santo Domingo;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Santo Domingo;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Santo Domingo;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-Santo Domingo;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;Derivar con Rx retroalverolar
-Santo Domingo;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-Santo Domingo;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;Posterior a teleinterconsulta Hospital Digital.
-Santo Domingo;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Santo Domingo;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Santo Domingo;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Navidad;Cirugía y Traumatología Buco Maxilofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-Navidad;Endodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K04.9.;
-Navidad;Patología Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clínicos de malignidad.
-Navidad;Patología Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
-Navidad;Periodoncia;Toda edad;Hospital Claudio Vicuña;Todos. Excepto: K05.5 y Z75;
-Navidad;Rehabilitación Oral Fija;Toda edad;Hospital Claudio Vicuña;Todos.;
-Navidad;Rehabilitación Oral Removible;Toda edad;Hospital Claudio Vicuña;Todos.;
-Navidad;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio Vicuña;Todos.;
-Navidad;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;Sólo para caso a resolver con cupos resolutividad APS.
-Navidad;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;Sólo para caso a resolver con cupos resolutividad APS.
-Navidad;Rehabilitación Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;Sólo para caso a resolver con cupos resolutividad APS.
-Valparaíso.;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Valparaíso.;Odontopediatría;< 15 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);Sin distinción.;
-Valparaíso.;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Valparaíso.;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Valparaíso.;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Valparaíso.;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-Juan Fernández;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Juan Fernández;Odontopediatría;< 15 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);Sin distinción.;
-Juan Fernández;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Juan Fernández;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Juan Fernández;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Juan Fernández;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-Casablanca;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Casablanca;Odontopediatría;< 15 años;Centro de Referencia de Salud Odontológica (C.R.S.O.);Sin distinción.;
-Casablanca;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital San José Casablanca;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Casablanca;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital San José Casablanca;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Casablanca;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital San José Casablanca;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Casablanca;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-Algarrobo;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Algarrobo;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-Algarrobo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Algarrobo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Algarrobo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Algarrobo;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-Cartagena;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Cartagena;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-Cartagena;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Cartagena;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Cartagena;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Cartagena;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-El Quisco;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-El Quisco;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-El Quisco;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-El Quisco;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-El Quisco;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-El Quisco;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-El Tabo;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-El Tabo;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-El Tabo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-El Tabo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-El Tabo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-El Tabo;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-San Antonio;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-San Antonio;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-San Antonio;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-San Antonio;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-San Antonio;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-San Antonio;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-Santo Domingo;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Santo Domingo;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-Santo Domingo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Santo Domingo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Santo Domingo;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Santo Domingo;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
-Navidad;Odontopediatría;< 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Menor de 20 años.
-Navidad;Odontopediatría;< 15 años;Hospital Claudio Vicuña;Sin distinción.;
-Navidad;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
-Navidad;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
-Navidad;Ortodoncia y Ortopedia Dento Máxilo Facial;4 a 12 años;Hospital Claudio Vicuña;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
-Navidad;Periodoncia;Desde 20 años;Hospital Claudio Vicuña;Z75 Problemas relacionados con facilidades de atención médica u otros servicios de salud.;Para anestesia general. Desde 20 años.
+Comuna_Origen;Especialidad_Destino;Rango_Edad;Establecimiento_Destino;CIE-10;Observacion
+ValparaÃ­so.;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Carlos Van Buren;Todos.;
+ValparaÃ­so.;Endodoncia;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos. Excepto: K04.9.;
+ValparaÃ­so.;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+ValparaÃ­so.;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+ValparaÃ­so.;Periodoncia;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos. Excepto: K05.5 y Z75;
+ValparaÃ­so.;RehabilitaciÃ³n Oral Fija;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;Derivar con Rx retroalverolar
+ValparaÃ­so.;RehabilitaciÃ³n Oral Removible;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;
+ValparaÃ­so.;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;Posterior a teleinterconsulta Hospital Digital.
+Juan FernÃ¡ndez;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Carlos Van Buren;Todos.;
+Juan FernÃ¡ndez;Endodoncia;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos. Excepto: K04.9.;
+Juan FernÃ¡ndez;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+Juan FernÃ¡ndez;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+Juan FernÃ¡ndez;Periodoncia;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos. Excepto: K05.5 y Z75;
+Juan FernÃ¡ndez;RehabilitaciÃ³n Oral Fija;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;Derivar con Rx retroalverolar
+Juan FernÃ¡ndez;RehabilitaciÃ³n Oral Removible;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;
+Juan FernÃ¡ndez;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;Posterior a teleinterconsulta Hospital Digital.
+Casablanca;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Carlos Van Buren;Todos.;
+Casablanca;Endodoncia;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos. Excepto: K04.9.;
+Casablanca;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+Casablanca;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+Casablanca;Periodoncia;Toda edad;Hospital San JosÃ© Casablanca;Todos. Excepto: K05.5 y Z75;
+Casablanca;RehabilitaciÃ³n Oral Fija;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;Derivar con Rx retroalverolar
+Casablanca;RehabilitaciÃ³n Oral Removible;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;
+Casablanca;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Todos.;Posterior a teleinterconsulta Hospital Digital.
+ValparaÃ­so.;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+ValparaÃ­so.;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+ValparaÃ­so.;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Casablanca;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Casablanca;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Casablanca;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Juan FernÃ¡ndez;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Juan FernÃ¡ndez;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Juan FernÃ¡ndez;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Algarrobo;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Algarrobo;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+Algarrobo;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+Algarrobo;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+Algarrobo;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+Algarrobo;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Derivar con Rx retroalverolar
+Algarrobo;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Algarrobo;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Posterior a teleinterconsulta Hospital Digital.
+Algarrobo;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Algarrobo;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Algarrobo;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Cartagena;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Cartagena;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+Cartagena;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+Cartagena;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+Cartagena;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+Cartagena;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Derivar con Rx retroalverolar
+Cartagena;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Cartagena;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Posterior a teleinterconsulta Hospital Digital.
+Cartagena;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Cartagena;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Cartagena;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+El Quisco;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+El Quisco;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+El Quisco;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+El Quisco;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+El Quisco;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+El Quisco;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Derivar con Rx retroalverolar
+El Quisco;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+El Quisco;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Posterior a teleinterconsulta Hospital Digital.
+El Quisco;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+El Quisco;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+El Quisco;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+El Tabo;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+El Tabo;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+El Tabo;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+El Tabo;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+El Tabo;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+El Tabo;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Derivar con Rx retroalverolar
+El Tabo;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+El Tabo;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Posterior a teleinterconsulta Hospital Digital.
+El Tabo;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+El Tabo;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+El Tabo;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+San Antonio;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+San Antonio;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+San Antonio;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+San Antonio;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+San Antonio;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+San Antonio;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Derivar con Rx retroalverolar
+San Antonio;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+San Antonio;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Posterior a teleinterconsulta Hospital Digital.
+San Antonio;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+San Antonio;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+San Antonio;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Santo Domingo;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Santo Domingo;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+Santo Domingo;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+Santo Domingo;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+Santo Domingo;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+Santo Domingo;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Derivar con Rx retroalverolar
+Santo Domingo;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Santo Domingo;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;Posterior a teleinterconsulta Hospital Digital.
+Santo Domingo;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Santo Domingo;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Santo Domingo;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Navidad;CirugÃ­a y TraumatologÃ­a Buco Maxilofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Navidad;Endodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K04.9.;
+Navidad;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C06.9 Tumor maligno de la boca, parte no especificada.;Con biopsia confirmada o evidente signos clÃ­nicos de malignidad.
+Navidad;PatologÃ­a Oral;Toda edad;Hospital Carlos Van Buren;C14.8 Lesion de sitios contiguos del labio, de la cavidad bucal y de faringe.;Posterior a teleinterconsulta Hospital Digital.
+Navidad;Periodoncia;Toda edad;Hospital Claudio VicuÃ±a;Todos. Excepto: K05.5 y Z75;
+Navidad;RehabilitaciÃ³n Oral Fija;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Navidad;RehabilitaciÃ³n Oral Removible;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Navidad;Trastornos Temporomandibulares y Dolor Orofacial;Toda edad;Hospital Claudio VicuÃ±a;Todos.;
+Navidad;Endodoncia;Toda edad;Mismo establecimiento APS (R);K04.9 Otras enfermedades no especificadas de pulpa y tejidos periapicales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Navidad;Periodoncia;Toda edad;Mismo establecimiento APS (R);K05.5 Otras enfermedades periodontales;SÃ³lo para caso a resolver con cupos resolutividad APS.
+Navidad;RehabilitaciÃ³n Oral Removible;Toda edad;Mismo establecimiento APS (R);K08.8 Otros trastornos especificados de dientes y estructuras de soporte;SÃ³lo para caso a resolver con cupos resolutividad APS.
+ValparaÃ­so.;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+ValparaÃ­so.;OdontopediatrÃ­a;< 15 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Sin distinciÃ³n.;
+ValparaÃ­so.;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+ValparaÃ­so.;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+ValparaÃ­so.;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+ValparaÃ­so.;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+Juan FernÃ¡ndez;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+Juan FernÃ¡ndez;OdontopediatrÃ­a;< 15 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Sin distinciÃ³n.;
+Juan FernÃ¡ndez;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+Juan FernÃ¡ndez;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+Juan FernÃ¡ndez;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+Juan FernÃ¡ndez;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+Casablanca;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+Casablanca;OdontopediatrÃ­a;< 15 aÃ±os;Centro de Referencia de Salud OdontolÃ³gica (C.R.S.O.);Sin distinciÃ³n.;
+Casablanca;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital San JosÃ© Casablanca;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+Casablanca;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital San JosÃ© Casablanca;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+Casablanca;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital San JosÃ© Casablanca;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+Casablanca;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+Algarrobo;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+Algarrobo;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+Algarrobo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+Algarrobo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+Algarrobo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+Algarrobo;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+Cartagena;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+Cartagena;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+Cartagena;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+Cartagena;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+Cartagena;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+Cartagena;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+El Quisco;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+El Quisco;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+El Quisco;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+El Quisco;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+El Quisco;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+El Quisco;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+El Tabo;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+El Tabo;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+El Tabo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+El Tabo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+El Tabo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+El Tabo;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+San Antonio;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+San Antonio;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+San Antonio;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+San Antonio;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+San Antonio;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+San Antonio;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+Santo Domingo;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+Santo Domingo;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+Santo Domingo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+Santo Domingo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+Santo Domingo;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+Santo Domingo;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
+Navidad;OdontopediatrÃ­a;< 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Menor de 20 aÃ±os.
+Navidad;OdontopediatrÃ­a;< 15 aÃ±os;Hospital Claudio VicuÃ±a;Sin distinciÃ³n.;
+Navidad;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K07.2 Anomalias de la relacion entre los arcos dentarios;Posterior a teleinterconsulta Hospital Digital.
+Navidad;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K01.0 Dientes incluidos;Posterior a teleinterconsulta Hospital Digital.
+Navidad;Ortodoncia y Ortopedia Dento MÃ¡xilo Facial;4 a 12 aÃ±os;Hospital Claudio VicuÃ±a;K00.1 Dientes supernumerarios;Posterior a teleinterconsulta Hospital Digital.
+Navidad;Periodoncia;Desde 20 aÃ±os;Hospital Claudio VicuÃ±a;Z75 Problemas relacionados con facilidades de atenciÃ³n mÃ©dica u otros servicios de salud.;Para anestesia general. Desde 20 aÃ±os.
