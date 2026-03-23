@@ -32,22 +32,40 @@ try:
 except Exception:
     st.error("⚠️ Error: Configura la 'GROQ_API_KEY' en los Secrets de Streamlit.")
 
-# 3. Función para cargar y normalizar el CSV
+# 3. Función para cargar y normalizar el CSV (MEJORADA CON AUTO-DECODIFICACIÓN)
 @st.cache_data
 def cargar_datos():
     archivo = 'derivaciones.csv'
     if not os.path.exists(archivo):
         return None
+    
+    # Intentamos diferentes codificaciones para evitar el error de 'utf-8'
+    encodigs_to_try = ['utf-8', 'latin-1', 'iso-8859-1', 'cp1252']
+    df = None
+    
+    for encoding in encodigs_to_try:
+        try:
+            df = pd.read_csv(archivo, sep=None, engine='python', encoding=encoding)
+            break # Si funciona, salimos del bucle
+        except (UnicodeDecodeError, Exception):
+            continue
+            
+    if df is None:
+        st.error("❌ No se pudo leer el archivo CSV. Revisa el formato y la codificación.")
+        return None
+
     try:
-        df = pd.read_csv(archivo, sep=None, engine='python', encoding='utf-8')
+        # Normalización de nombres de columnas
         df.columns = (df.columns.str.strip().str.upper()
                       .str.replace('Ó', 'O').str.replace('Á', 'A')
                       .str.replace('É', 'E').str.replace('Í', 'I')
                       .str.replace('Ú', 'U').str.replace(' ', '_'))
+        
+        # Limpieza de datos en las celdas
         df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
         return df
     except Exception as e:
-        st.error(f"❌ Error al leer el CSV: {e}")
+        st.error(f"❌ Error al procesar las columnas: {e}")
         return None
 
 df_mapa = cargar_datos()
