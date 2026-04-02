@@ -2,141 +2,109 @@ import streamlit as st
 import pandas as pd
 from groq import Groq
 import json
-import os
 
 # 1. Configuración de la Interfaz
-st.set_page_config(page_title="Asistente de Derivación SSVSA", page_icon="🏥", layout="centered")
+st.set_page_config(page_title="Asistente de Derivación Salud", page_icon="🏥", layout="centered")
 
-# --- ESTILOS PERSONALIZADOS ---
+st.title("🏥 Asistente Inteligente de Derivación")
 st.markdown("""
-<style>
-    .stButton>button { width: 100%; border-radius: 20px; height: 3em; background-color: #f0f2f6; }
-    .stExpander { border: 1px solid #e6e9ef; border-radius: 10px; margin-bottom: 10px; }
-    .author-text { text-align: center; color: #666666; font-size: 0.9em; margin-top: -10px; margin-bottom: 20px; }
-</style>
-""", unsafe_allow_html=True)
-
-# --- SECCIÓN DE LOGO Y TÍTULO ---
-if os.path.exists('logo.png'):
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.image('logo.png', use_container_width=True)
-else:
-    st.title("🏥 Asistente Inteligente de Derivación")
-
-st.markdown("<h3 style='text-align: center; margin-bottom: 0;'>Red de Derivación SSVSA</h3>", unsafe_allow_html=True)
-st.markdown("<p class='author-text'>Autoría: Sebastián Pino Rivera</p>", unsafe_allow_html=True)
-st.markdown("---")
+Esta herramienta ayuda a identificar el **Establecimiento Destino** según el Mapa de Derivación oficial.
+La decisión clínica final es siempre del profesional tratante.
+""")
 
 # 2. Conexión con la IA
 try:
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-except Exception:
-    st.error("⚠️ Error: Configura la 'GROQ_API_KEY' en los Secrets de Streamlit.")
+except:
+    st.error("Falta la configuración de la API Key en Streamlit Secrets.")
 
-# 3. Función para cargar y normalizar el CSV
+# 3. Función para cargar y normalizar el CSV (CORREGIDA)
 @st.cache_data
 def cargar_datos():
-    archivo = 'derivaciones.csv'
-    if not os.path.exists(archivo):
-        return None
+    # Especificamos el separador ';' y el nombre exacto del archivo
+    df = pd.read_csv('derivaciones.csv', sep=';')
     
-    encodings_to_try = ['utf-8', 'latin-1', 'iso-8859-1', 'cp1252']
-    df = None
+    # Rellenamos los vacíos con un texto vacío para evitar el error de "float found"
+    df = df.fillna("")
     
-    for encoding in encodings_to_try:
-        try:
-            df = pd.read_csv(archivo, sep=None, engine='python', encoding=encoding)
-            break
-        except:
-            continue
-            
-    if df is None:
-        st.error("❌ No se pudo leer el archivo CSV.")
-        return None
+    # Normalización profunda:
+    # 1. Convertir todo a String
+    # 2. A Mayúsculas
+    # 3. Eliminar espacios al inicio/final
+    # 4. Eliminar el punto final en los nombres (como en 'VALPARAÍSO.')
+    df = df.apply(lambda x: x.astype(str).str.upper().str.strip().str.rstrip('.'))
+    
+    return df
 
-    try:
-        df.columns = (df.columns.str.strip().str.upper()
-                      .str.replace('Ó', 'O').str.replace('Á', 'A')
-                      .str.replace('É', 'E').str.replace('Í', 'I')
-                      .str.replace('Ú', 'U').str.replace(' ', '_'))
-        df = df.apply(lambda x: x.astype(str).str.upper().str.strip())
-        return df
-    except Exception as e:
-        st.error(f"❌ Error al procesar columnas: {e}")
-        return None
+try:
+    df_mapa = cargar_datos()
 
-df_mapa = cargar_datos()
-
-if df_mapa is not None:
-    if st.button("🔄 Nueva Consulta / Limpiar"):
-        st.rerun()
-
-    if 'TIPO_ESPECIALIDAD' in df_mapa.columns:
-        tipos_disponibles = sorted(df_mapa['TIPO_ESPECIALIDAD'].unique().tolist())
-        tipo_seleccionado = st.selectbox("1. Selecciona el Tipo de Especialidad:", ["TODOS"] + tipos_disponibles)
-    else:
-        tipo_seleccionado = "TODOS"
-
-    user_input = st.text_input("2. Describe la consulta (ej: Paciente de Casablanca para Endodoncia):", key="input_query")
+    # 4. Entrada del Operador
+    user_input = st.text_input("Ejemplo: 'Paciente de Casablanca para Endodoncia'", "")
 
     if user_input:
-        df_filtrado = df_mapa.copy()
-        if tipo_seleccionado != "TODOS":
-            df_filtrado = df_mapa[df_mapa['TIPO_ESPECIALIDAD'] == tipo_seleccionado]
-
         with st.spinner("Analizando mapa de red..."):
-            try:
-                comunas_validas = df_filtrado['COMUNA_ORIGEN'].unique().tolist()
-                especialidades_validas = df_filtrado['ESPECIALIDAD_DESTINO'].unique().tolist()
+            # 5. Preparamos las opciones para la IA (asegurando que sean solo strings)
+            comunas_lista = sorted(df_mapa['Comuna_Origen'].unique().tolist())
+            especialidades_lista = sorted(df_mapa['Especialidad_Destino'].unique().tolist())
+            
+            prompt_sistema = f"""
+            Eres un extractor de datos técnicos de salud. 
+            Tu objetivo es extraer: Comuna_Origen y Especialidad_Destino del texto del usuario.
+            
+            Opciones válidas de Comuna: {", ".join(comunas_lista)}
+            Opciones válidas de Especialidad: {", ".join(especialidades_lista)}
+            
+            Responde ÚNICAMENTE en formato JSON:
+            {{"comuna": "VALOR", "especialidad": "VALOR"}}
+            
+            REGLAS:
+            1. El VALOR debe coincidir EXACTAMENTE con uno de las listas de arriba.
+            2. Si no encuentras el dato, pon "NULL".
+            """
+            
+            completion = client.chat.completions.create(
+                model="llama3-8b-8192",
+                messages=[
+                    {"role": "system", "content": prompt_sistema},
+                    {"role": "user", "content": user_input}
+                ],
+                response_format={"type": "json_object"}
+            )
+            
+            filtros = json.loads(completion.choices[0].message.content)
+            comuna = filtros.get("comuna")
+            especialidad = filtros.get("especialidad")
 
-                prompt_sistema = f"""
-                Eres un experto en derivaciones del SSVSA. Extrae: COMUNA_ORIGEN y ESPECIALIDAD_DESTINO.
-                Opciones Comuna: {comunas_validas}
-                Opciones Especialidad: {especialidades_validas}
-                Responde ÚNICAMENTE en JSON: {{"comuna": "VALOR", "especialidad": "VALOR"}}
-                """
-                
-                completion = client.chat.completions.create(
-                    model="llama-3.3-70b-versatile",
-                    messages=[{"role": "system", "content": prompt_sistema}, {"role": "user", "content": user_input}],
-                    response_format={"type": "json_object"}
-                )
-                
-                filtros = json.loads(completion.choices[0].message.content)
-                comuna = filtros.get("comuna")
-                especialidad = filtros.get("especialidad")
+            # 6. Lógica de Búsqueda
+            if comuna != "NULL" and especialidad != "NULL":
+                # Aplicamos el filtro (ambos en mayúsculas por seguridad)
+                resultado = df_mapa[
+                    (df_mapa['Comuna_Origen'] == comuna.upper()) & 
+                    (df_mapa['Especialidad_Destino'] == especialidad.upper())
+                ]
 
-                if comuna != "NULL" and especialidad != "NULL":
-                    resultado = df_filtrado[
-                        (df_filtrado['COMUNA_ORIGEN'] == comuna) & 
-                        (df_filtrado['ESPECIALIDAD_DESTINO'] == especialidad)
-                    ]
-
-                    if not resultado.empty:
-                        cols_agrupar = ['ESTABLECIMIENTO_DESTINO', 'RANGO_EDAD']
-                        if 'TIPO_ESPECIALIDAD' in df_mapa.columns: cols_agrupar.append('TIPO_ESPECIALIDAD')
-
-                        agrupado = resultado.groupby(cols_agrupar).agg({
-                            'CIE-10': lambda x: ', '.join(sorted(set(x))),
-                            'OBSERVACION': lambda x: ' | '.join(sorted(set(x)))
-                        }).reset_index()
-
-                        st.success(f"📍 Resultados para {especialidad} en {comuna}:")
-                        
-                        for i, row in agrupado.iterrows():
-                            with st.expander(f"🏥 {row['ESTABLECIMIENTO_DESTINO']}", expanded=True):
-                                c1, c2 = st.columns(2)
-                                with c1: st.write(f"**Edad:** {row['RANGO_EDAD']}")
-                                with c2: 
-                                    if 'TIPO_ESPECIALIDAD' in row: st.write(f"**Tipo:** {row['TIPO_ESPECIALIDAD']}")
-                                st.markdown(f"**CIE-10:** `{row['CIE-10']}`")
-                                st.info(f"**Observación:** {row['OBSERVACION']}")
-                    else:
-                        st.warning(f"No hay ruta para {especialidad} en {comuna} categoría {tipo_seleccionado}.")
+                if not resultado.empty:
+                    st.success(f"📍 **Destino Encontrado para {especialidad} desde {comuna}:**")
+                    for i, row in resultado.iterrows():
+                        with st.container():
+                            st.info(f"### {row['Establecimiento_Destino']}")
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                st.write(f"**Rango Etario:** {row['Rango_Edad']}")
+                                st.write(f"**CIE-10:** {row['CIE-10']}")
+                            with col2:
+                                st.write(f"**Tipo:** {row['Tipo_Especialidad']}")
+                            
+                            if row['Observacion']:
+                                st.warning(f"**Observaciones:** {row['Observacion']}")
+                            st.divider()
                 else:
-                    st.info("No identifiqué la comuna o especialidad. Intenta ser más específico.")
-            except Exception as e:
-                st.error(f"Error: {e}")
-else:
-    st.warning("⚠️ Sube el archivo 'derivaciones.csv' a tu repositorio.")
+                    st.warning(f"No se encontró una ruta específica para {especialidad} en {comuna}.")
+            else:
+                st.info("No pudimos identificar la comuna o especialidad. Intenta ser más específico.")
+
+except FileNotFoundError:
+    st.error("No se encontró el archivo 'derivaciones.csv'. Asegúrate de que el nombre sea exacto.")
+except Exception as e:
+    st.error(f"Ocurrió un error inesperado: {e}")
