@@ -8,13 +8,12 @@ st.set_page_config(page_title="Asistente de Derivación Salud", page_icon="🏥"
 
 st.title("🏥 Asistente Inteligente de Derivación")
 st.markdown("""
-Esta herramienta ayuda a identificar el **Establecimiento Destino** según el Mapa de Derivación oficial. 
+Esta herramienta ayuda a identificar el **Establecimiento Destino** según el Mapa de Derivación oficial.
 """)
 
-# 2. Conexión con la IA (Modelo actualizado)
+# 2. Conexión con la IA (Modelo actualizado y vigente)
 try:
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-    # Usamos un modelo vigente
     MODELO_IA = "llama-3.3-70b-versatile" 
 except Exception:
     st.error("Error: Configura 'GROQ_API_KEY' en los Secrets de Streamlit.")
@@ -25,15 +24,15 @@ except Exception:
 def cargar_datos():
     file_path = 'derivaciones.csv'
     try:
-        # Latin-1 para tildes de Excel, sep ';' por tu archivo
+        # Usamos latin-1 por los caracteres especiales de Excel y sep ';' por tu archivo
         df = pd.read_csv(file_path, sep=';', encoding='latin-1')
     except Exception:
         df = pd.read_csv(file_path, sep=';', encoding='utf-8')
     
-    # Rellenar vacíos para evitar error de floats
+    # REGLA ORO: Rellenar vacíos para evitar errores de floats en el prompt
     df = df.fillna("")
     
-    # Limpieza: Mayúsculas, sin espacios y quitar puntos al final de nombres
+    # Normalización: Mayúsculas, sin espacios y quitar puntos finales (ej: "VALPARAÍSO.")
     def limpiar(txt):
         return str(txt).upper().strip().rstrip('.')
 
@@ -45,27 +44,33 @@ def cargar_datos():
 try:
     df_mapa = cargar_datos()
 
+    # --- NUEVO: SELECTOR DE TIPO (Alimentado del CSV) ---
+    tipos_disponibles = sorted(df_mapa['Tipo_Especialidad'].unique().tolist())
+    tipo_seleccionado = st.selectbox("Seleccione Tipo de Especialidad:", tipos_disponibles)
+
     # 4. Entrada del Usuario
-    user_input = st.text_input("Ejemplo: 'Paciente de Casablanca para Endodoncia'", "")
+    user_input = st.text_input("Describa la necesidad del paciente:", placeholder="Ej: Paciente de Casablanca para Endodoncia")
 
     if user_input:
         with st.spinner("Analizando requerimiento..."):
-            # Listas para que la IA sepa qué buscar
-            comunas = sorted(df_mapa['Comuna_Origen'].unique().tolist())
-            especialidades = sorted(df_mapa['Especialidad_Destino'].unique().tolist())
-            tipos = sorted(df_mapa['Tipo_Especialidad'].unique().tolist())
+            # Filtramos las opciones que le pasamos a la IA según el TIPO seleccionado
+            # Esto hace que la IA sea mucho más precisa
+            df_filtrado_tipo = df_mapa[df_mapa['Tipo_Especialidad'] == tipo_seleccionado]
+            
+            comunas = sorted(df_filtrado_tipo['Comuna_Origen'].unique().tolist())
+            especialidades = sorted(df_filtrado_tipo['Especialidad_Destino'].unique().tolist())
 
             prompt_sistema = f"""
-            Eres un asistente técnico de salud. Extrae los siguientes datos en JSON.
+            Eres un experto en derivaciones de salud. Tu tarea es extraer la Comuna y la Especialidad del texto.
             
-            COMUNAS: {comunas}
-            ESPECIALIDADES: {especialidades}
-            TIPOS: {tipos}
+            CONTEXTO DEL TIPO: {tipo_seleccionado}
+            COMUNAS VÁLIDAS: {comunas}
+            ESPECIALIDADES VÁLIDAS: {especialidades}
             
             Instrucciones:
-            1. Retorna JSON con: "comuna", "especialidad", "tipo".
-            2. Usa "NULL" si no encuentras el dato.
-            3. El "tipo" se refiere a la categoría (ej: MÉDICA u ODONTOLÓGICA).
+            1. Retorna un JSON con llaves: "comuna" y "especialidad".
+            2. El valor debe coincidir EXACTAMENTE con los nombres de las listas.
+            3. Si no encuentras el dato exacto, usa "NULL".
             """
 
             completion = client.chat.completions.create(
@@ -80,36 +85,30 @@ try:
             res = json.loads(completion.choices[0].message.content)
             c_ia = res.get("comuna")
             e_ia = res.get("especialidad")
-            t_ia = res.get("tipo")
 
-            # 5. Lógica de Filtrado Dinámico
+            # 5. Lógica de Filtrado Final
             if c_ia != "NULL" and e_ia != "NULL":
-                # Filtro base
-                query = (df_mapa['Comuna_Origen'] == c_ia) & (df_mapa['Especialidad_Destino'] == e_ia)
-                
-                # Si la IA detectó un tipo, lo sumamos al filtro
-                if t_ia != "NULL":
-                    query = query & (df_mapa['Tipo_Especialidad'] == t_ia)
-
-                resultado = df_mapa[query]
+                # Buscamos en el dataframe filtrado por el botón "Tipo"
+                resultado = df_filtrado_tipo[
+                    (df_filtrado_tipo['Comuna_Origen'] == c_ia) & 
+                    (df_filtrado_tipo['Especialidad_Destino'] == e_ia)
+                ]
 
                 if not resultado.empty:
-                    st.success(f"✅ Coincidencias para {e_ia} en {c_ia}")
+                    st.success(f"✅ Destino para {e_ia} ({tipo_seleccionado}) en {c_ia}:")
                     for _, row in resultado.iterrows():
                         with st.expander(f"📍 {row['Establecimiento_Destino']}", expanded=True):
                             col1, col2 = st.columns(2)
                             with col1:
-                                st.write(f"**Tipo:** {row['Tipo_Especialidad']}")
                                 st.write(f"**Rango Edad:** {row['Rango_Edad']}")
-                            with col2:
                                 st.write(f"**CIE-10:** {row['CIE-10']}")
-                            
-                            if row['Observacion']:
-                                st.info(f"**Observación:** {row['Observacion']}")
+                            with col2:
+                                if row['Observacion']:
+                                    st.info(f"**Observación:** {row['Observacion']}")
                 else:
-                    st.warning("No se encontró una ruta exacta. Intenta especificar si es Médica u Odontológica.")
+                    st.warning(f"No se encontró ruta para {e_ia} en {c_ia} dentro de la categoría {tipo_seleccionado}.")
             else:
-                st.info("Por favor, indica comuna y especialidad (ej: 'Niño de Valparaíso para Odontopediatría').")
+                st.info(f"No pudimos identificar la comuna o especialidad en el área de {tipo_seleccionado}.")
 
 except Exception as e:
-    st.error(f"Se produjo un error al procesar la solicitud: {e}")
+    st.error(f"Error: {e}")
